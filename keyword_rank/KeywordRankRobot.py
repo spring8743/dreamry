@@ -13,7 +13,7 @@ from utility.Config import*
 
 
 #define how many keywords you want to run in one thread
-words_num = voice_recorder_keyword.__len__() / thread_num 
+words_num = voice_recorder_keyword.__len__() / rank_thread_num 
 
 #shuffle the keywords type
 voice_recorder_keyword_new = voice_recorder_keyword[:] # Copy keywords
@@ -26,13 +26,13 @@ def worker(startPoint, endPoint, country_code, asin):
     return 
 
 
-for i  in range(thread_num ):
+for i  in range(rank_thread_num ):
     #define the start point and end point for each thread
     startPoint = i * words_num
     endPoint = startPoint + words_num
     
     #If it's last page then end pint is None
-    if i == thread_num -1 :
+    if i == rank_thread_num -1 :
         endPoint = None
     
     #start the thread

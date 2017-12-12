@@ -79,6 +79,10 @@ voice_recorder_click_keyword = [
 {'recorder digital voice':'Short Keyword'}
 ]
 
+voice_recorder_ppc_click_keyword = [
+{'voice recorder small':'Short Keyword'}
+]
+
 if __name__ == '__main__':
 #          voice_recorder_click_keyword = voice_recorder_click_keyword.append(voice_recorder_click_keyword)
     voice_recorder_click_keyword = voice_recorder_click_keyword * 5
