@@ -10,6 +10,7 @@ asin = 'B074XDBCK3'
 voice_recorder_title = 'Digital Voice Recorder, DREAMRY 8GB USB Sound Audio Recorder, Voice Activated Recoder, Multifunctional Portable HD Recording Double Microphone Rechargeable Dictaphone/Noise Cancelling for lecture'
 
 
+# used for keyword rank for every day
 voice_recorder_keyword = [
 {'digital recorder voice':'Short Keyword'},
 {'digital voice recorder':'Short Keyword'},
@@ -71,6 +72,7 @@ voice_recorder_keyword = [
 # {'sound recorder portable':'Long Tail Keyword'}
 # ]
 
+# used for keyword click and add to cart, add to wishlist
 voice_recorder_click_keyword = [
 {'digital recorder voice':'Short Keyword'},
 {'digital voice recorder':'Short Keyword'},
@@ -79,6 +81,7 @@ voice_recorder_click_keyword = [
 {'recorder digital voice':'Short Keyword'}
 ]
 
+# used for PPC keyword click
 voice_recorder_ppc_click_keyword = [
 {'voice recorder small':'Short Keyword'}
 ]
