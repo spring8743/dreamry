@@ -39,8 +39,8 @@ def ppc_click_product_page(search_keywords, item_title, country_code, asin):
         target_url = 'https://www.amazon.%s/s/ref=sr_pg_%s?page=%s&keywords=%s&ie=UTF8'%(DOMAINS[country_code],1, 1, search_keywords.keys()[0])
         driver.get(target_url)
 
-        #Loop the first 20 pages to find the product by keyword        
-        for i in xrange(1, max_page):
+        #Only click the PPC keyword for the first 3 pages      
+        for i in xrange(1, 4):
             text = driver.page_source
             soup = BeautifulSoup(text, 'lxml')
             titles = soup.find_all('h2')
@@ -50,8 +50,15 @@ def ppc_click_product_page(search_keywords, item_title, country_code, asin):
             for title in titles:
                 j = j + 1
                 
+                # get the product_title
                 product_title = title.get('data-attribute', '')
+                # transfor the title to string
                 title = str(title)
+                
+                # If it's our product, then break
+                if item_keywords == product_title:
+                    found = True
+                    break
                 
                 if '[Sponsored]' in title:
                         #If find the product, then click the item
@@ -60,11 +67,6 @@ def ppc_click_product_page(search_keywords, item_title, country_code, asin):
                         driver.find_element_by_css_selector('#breadcrumb-back-link').click()
                         time.sleep(5)
                     
-                    
-                # If find our product, then break    
-                if item_title in product_title:
-                    found = True
-                    break
             if found:
                 #If found the product, then set the page and row id
                 page = i
