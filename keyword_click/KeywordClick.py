@@ -8,6 +8,7 @@ from utility.Config import *
 from utility.GetProxy import get_proxy
 import random
 from utility.VisitRecord import update_record
+from user_agent import generate_user_agent
 
 
 def search_product_page(search_keywords, item_title, country_code, asin):
@@ -19,9 +20,10 @@ def search_product_page(search_keywords, item_title, country_code, asin):
     
     Returns:
     """
-    #setup the proxy on Chrome
+    #setup the proxy on Chrome, and also set the random user agent
 #     chrome_options = webdriver.ChromeOptions()
 #     chrome_options.add_argument('--proxy-server=%s' % get_proxy())
+#     chrome_options.add_argument('user-agent=%s' % generate_user_agent())
 #     driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
     proxy_ip = get_proxy()
     

@@ -8,6 +8,7 @@ from utility.Config import *
 from utility.GetProxy import get_proxy
 import random
 from utility.VisitRecord import update_record
+from user_agent import generate_user_agent
 
 
 def ppc_click_product_page(search_keywords, item_title, country_code, asin):
@@ -22,6 +23,7 @@ def ppc_click_product_page(search_keywords, item_title, country_code, asin):
     #setup the proxy on Chrome
 #     chrome_options = webdriver.ChromeOptions()
 #     chrome_options.add_argument('--proxy-server=%s' % get_proxy())
+#     chrome_options.add_argument('user-agent=%s' % generate_user_agent())
 #     driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
     proxy_ip = get_proxy()
     
