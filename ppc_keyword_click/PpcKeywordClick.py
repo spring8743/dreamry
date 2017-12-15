@@ -56,7 +56,7 @@ def ppc_click_product_page(search_keywords, item_title, country_code, asin):
                 title = str(title)
                 
                 # If it's our product, then break
-                if item_keywords == product_title:
+                if item_title == product_title:
                     found = True
                     break
                 
